@@ -1,11 +1,19 @@
-function showDetails(productId) {
-  const productName = document.querySelector(`#${productId} h3`).textContent;
-  const productDescription = document.querySelector(`#${productId} p`).textContent;
-  const productLink = document.querySelector(`#${productId} a`).getAttribute('href');
-  
-  document.querySelector('#productName').textContent = productName;
-  document.querySelector('#productDescription').textContent = productDescription;
-  document.querySelector('#productLink').setAttribute('href', productLink);
-  
-  document.querySelector('#productDetails').style.display = 'block';
-}
+const productsContainer = document.getElementById('products');
+
+// Fetch product information from server
+fetch('/api/products')
+  .then(response => response.json())
+  .then(products => {
+    // Display product information on website
+    products.forEach(product => {
+      const productElement = document.createElement('div');
+      productElement.classList.add('product');
+      productElement.innerHTML = `
+        <img src="${product.image}">
+        <h2>${product.name}</h2>
+        <p>Price: $${product.price}</p>
+        <p>Inventory: ${product.inventory}</p>
+      `;
+      productsContainer.appendChild(productElement);
+    });
+  });
