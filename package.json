@@ -2,9 +2,9 @@
   "name": "product-inventory",
   "version": "1.0.0",
   "description": "A simple website to display product information and inventory with admin panel for adding new products",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
