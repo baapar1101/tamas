@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+#products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product h2 {
+  margin-top: 0;
+}
+
+.product p {
+  margin-bottom: 0;
+}
